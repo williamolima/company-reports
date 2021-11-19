@@ -4,16 +4,17 @@ import br.edu.ifpb.report.controller.ExpenseReport;
 import br.edu.ifpb.report.controller.TaxReport;
 
 public class ReportService {
-    ExpenseReport expenseReport = new ExpenseReport();
-    TaxReport expenseReport = new TaxReport();
 
+    Report report = new Report();
 
     public void generateReport(String type) {
         if (type.equals("expense")) {
-            expenseReport();
+            report = expenseReport();
         } else {
-            taxReport();
+            report = taxReport();
         }
+
+        return report;
     }
 
     public abstract class Report {
